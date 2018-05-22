@@ -1,0 +1,59 @@
+{
+  "name": "sfdx-cli-custom-expansion",
+  "description": "Group of Salesforce DX CLI custom expansion plugins ",
+  "version": "0.0.0",
+  "author": "John M. Daniel @ImJohnMDaniel",
+  "bugs": "https://github.com/ImJohnMDaniel/sfdx-cli-custom-expansion/issues",
+  "dependencies": {
+    "@oclif/command": "^1.4.21",
+    "@oclif/config": "^1.6.17",
+    "@oclif/errors": "^1.0.9",
+    "@salesforce/command": "^0.1.2",
+    "npm": "^6.0.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.13.18",
+    "@oclif/plugin-help": "^1.2.10",
+    "@oclif/test": "1",
+    "@salesforce/dev-config": "^1.0.4",
+    "@types/chai": "4",
+    "@types/jsforce": "^1.8.10",
+    "@types/mocha": "5",
+    "@types/node": "9",
+    "chai": "4",
+    "globby": "^8.0.1",
+    "mocha": "5",
+    "sinon": "^5.0.4",
+    "ts-node": "5",
+    "tslib": "1",
+    "typescript": "2.8"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    ".oclif.manifest.json",
+    "/lib",
+    "/messages"
+  ],
+  "homepage": "https://github.com/ImJohnMDaniel/sfdx-cli-custom-expansion",
+  "keywords": [
+    "sfdx-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "commands": "./lib/commands",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "ImJohnMDaniel/sfdx-cli-custom-expansion",
+  "scripts": {
+    "postpack": "rm -f .oclif.manifest.json",
+    "posttest": "tsc -p test --noEmit && tslint -p test -t stylish",
+    "prepack": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
+    "prepare": "rm -rf lib && tsc && oclif-dev manifest && oclif-dev readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}

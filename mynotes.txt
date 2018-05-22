@@ -1,0 +1,7 @@
+Since it is Typescript, you have to issue the command `yarn prepare` to compile the command.
+
+
+to make this dev project command available locally to sfdx, issue the command `sfdx plugins:link .`
+
+
+To make it available to sfdx commands is simply to deploy it to npm
